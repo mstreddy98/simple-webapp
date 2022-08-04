@@ -15,7 +15,7 @@ RUN	yum install -y mysql
 RUN     pip3 install flask && \
         pip3 install flask-mysql
 
-COPY ./simple-webapp/app.py /opt/
+COPY ./app.py /opt/
 COPY ./script.sh /opt/
 RUN chmod +x /opt/script.sh
 ENTRYPOINT ./script.sh ; /bin/bash 
