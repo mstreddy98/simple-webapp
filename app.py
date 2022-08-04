@@ -10,9 +10,9 @@ mysql_database_host = 'MYSQL_DATABASE_HOST' in os.environ and os.environ['MYSQL_
 
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'admin'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'swetha1234'
-app.config['MYSQL_DATABASE_DB'] = 'employee'
-app.config['MYSQL_DATABASE_HOST'] = 'mysqldb1.cfpyfocddzdb.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'swetham6'
+app.config['MYSQL_DATABASE_DB'] = 'mydb'
+app.config['MYSQL_DATABASE_HOST'] = 'mysqldb.cfpyfocddzdb.us-east-1.rds.amazonaws.com'
 mysql.init_app(app)
 
 conn = mysql.connect()
@@ -29,7 +29,7 @@ def hello():
 
 @app.route('/read from database')
 def read():
-    cursor.execute("SELECT * FROM employeeDetails")
+    cursor.execute("SELECT * FROM mydetails")
     row = cursor.fetchone()
     result = []
     while row is not None:
